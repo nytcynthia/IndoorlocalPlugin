@@ -26,14 +26,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 // public class locationplugin extends CordovaPlugin {
-public static final String TAG = "Location Plugin";
-private static final String POSITION_DATA_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/position_data";
-private TextView positionTextView;
-private IndoorLocationManager indoorLocationManager;
+
 /**
 * Constructor.
 */
 public class locationplugin extends CordovaPlugin {
+	public static final String TAG = "Location Plugin";
+	private static final String POSITION_DATA_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/position_data";
+	private TextView positionTextView;
+	private IndoorLocationManager indoorLocationManager;
+
 	private void initialize() {
 	String siteName = "hkust";
 	IndoorLocationManager.newInstance(this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
