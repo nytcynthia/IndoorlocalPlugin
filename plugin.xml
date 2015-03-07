@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com.ionicframework.locationplugin"
+    version="0.1.0">
+    <name>Location</name>
+    <description>Location Plugin</description>
+    
+    
+    <js-module src="www/locationplugin.js" name="Location">
+<!--        <clobbers target="window.locationplugin" />-->
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Location">
+                <param name="android-package" value="com.ionicframework.locationplugin"/>
+            </feature>
+        </config-file>
+        
+        <source-file src="src/android/libs/locationapi/armeabi/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" />
+        <source-file src="src/android/libs/locationapi/armeabi-v7a/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" />
+        <source-file src="src/android/libs/locationapi/locationapi.jar" target-dir="src/com/ionicframework/locationplugin/libs" />
+        <source-file src="src/android/libs/locationapi/mips/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" />
+        <source-file src="src/android/libs/locationapi/x86/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" />
+        <source-file src="src/android/locationplugin.java" target-dir="src/com/ionicframework/locationplugin" />
+    </platform>
+</plugin>
