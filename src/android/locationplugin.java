@@ -25,6 +25,9 @@ import android.provider.Settings;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 // public class locationplugin extends CordovaPlugin {
 
 /**
@@ -55,8 +58,8 @@ public class locationplugin extends CordovaPlugin {
 	}
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		this.callbackContext = callbackContext;
-		this.activity = this.cordova.getActivity();
+		// this.callbackContext = callbackContext;
+		// this.activity = this.cordova.getActivity();
 		boolean retValue = true;
 		if (action.equals("startPositioning")){
 			this.startPositioning();
