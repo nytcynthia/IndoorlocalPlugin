@@ -1,12 +1,12 @@
 package com.ionicframework.linkedit757044;
 
-import mtrec.wherami.lbs.datatype.PointF;
-import mtrec.wherami.lbs.process.ILocationUtil.OnGetLocationResultListener;
-import mtrec.wherami.lbs.process.ILocationUtil.OnReadingDataBeginListener;
-import mtrec.wherami.lbs.process.ILocationUtil.OnWifiConnectedListener;
-import mtrec.wherami.lbs.process.ILocationUtil.OnWifiNotEnabledWhenScanningListener;
-import mtrec.wherami.lbs.process.IndoorLocationManager;
-import mtrec.wherami.lbs.process.IndoorLocationManager.OnVerificationListener;
+// import mtrec.wherami.lbs.datatype.PointF;
+// import mtrec.wherami.lbs.process.ILocationUtil.OnGetLocationResultListener;
+// import mtrec.wherami.lbs.process.ILocationUtil.OnReadingDataBeginListener;
+// import mtrec.wherami.lbs.process.ILocationUtil.OnWifiConnectedListener;
+// import mtrec.wherami.lbs.process.ILocationUtil.OnWifiNotEnabledWhenScanningListener;
+// import mtrec.wherami.lbs.process.IndoorLocationManager;
+// import mtrec.wherami.lbs.process.IndoorLocationManager.OnVerificationListener;
 import android.app.Activity;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
