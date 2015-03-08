@@ -1,4 +1,4 @@
-package mtrec.localizationapitest;
+package com.ionicframework.linkedit757044;
 
 import mtrec.wherami.lbs.datatype.PointF;
 import mtrec.wherami.lbs.process.ILocationUtil.OnGetLocationResultListener;
