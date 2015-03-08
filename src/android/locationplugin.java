@@ -41,25 +41,25 @@ public class locationplugin extends CordovaPlugin {
 
 	private void initialize() {
 	String siteName = "hkust";
-	// IndoorLocationManager.newInstance(this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
+	IndoorLocationManager.newInstance(this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
 
-	// 	@Override
-	// 	public void onVerificationFinished(boolean isSuccess, String resultCode) {
-	// 		Log.e("mtrec", "Passed : " + isSuccess + "!!!!!" + resultCode);
-	// 		if(isSuccess) {
-	// 			positionTextView.setText("Verification passed!");
-	// 			indoorLocationManager = IndoorLocationManager.getInstance();
-	// 			startPositioning();
-	// 		} else {
-	// 			positionTextView.setText("Verification failed : " + resultCode);
-	// 		}
-	// 	}
-	// 	});
+		@Override
+		public void onVerificationFinished(boolean isSuccess, String resultCode) {
+			Log.e("mtrec", "Passed : " + isSuccess + "!!!!!" + resultCode);
+			if(isSuccess) {
+				positionTextView.setText("Verification passed!");
+				indoorLocationManager = IndoorLocationManager.getInstance();
+				startPositioning();
+			} else {
+				positionTextView.setText("Verification failed : " + resultCode);
+			}
+		}
+		});
 	}
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		// this.callbackContext = callbackContext;
-		// this.activity = this.cordova.getActivity();
+		this.callbackContext = callbackContext;
+		this.activity = this.cordova.getActivity();
 		boolean retValue = true;
 		if (action.equals("startPositioning")){
 			this.startPositioning();
