@@ -58,11 +58,11 @@ public class locationplugin extends CordovaPlugin {
 	}
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		this.callbackContext = callbackContext;
-		this.activity = this.cordova.getActivity();
+		// /*this.*/callbackContext = callbackContext;
+		// /*this.*/activity = this.cordova.getActivity();
 		boolean retValue = true;
 		if (action.equals("startPositioning")){
-			this.startPositioning();
+			/*this.*/startPositioning();
 		} else {
 			retValue = false;
 		}
