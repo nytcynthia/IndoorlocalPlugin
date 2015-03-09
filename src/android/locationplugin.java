@@ -41,7 +41,7 @@ public class locationplugin extends CordovaPlugin {
 
 	private void initialize() {
 	String siteName = "hkust";
-	IndoorLocationManager.newInstance(this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
+	IndoorLocationManager.newInstance(MainActivity.this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
 
 		@Override
 		public void onVerificationFinished(boolean isSuccess, String resultCode) {
@@ -58,11 +58,11 @@ public class locationplugin extends CordovaPlugin {
 	}
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		this.callbackContext = callbackContext;
-		this.activity = this.cordova.getActivity();
+		MainActivity.this.callbackContext = callbackContext;
+		MainActivity.this.activity = MainActivity.this.cordova.getActivity();
 		boolean retValue = true;
 		if (action.equals("startPositioning")){
-			this.startPositioning();
+			MainActivity.this.startPositioning();
 		} else {
 			retValue = false;
 		}
