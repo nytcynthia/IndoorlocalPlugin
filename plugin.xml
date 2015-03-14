@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     id="com.ionicframework.locationplugin"
     version="0.1.0">
-    <name>Location</name>
+    <name>LocationPlugin</name>
     <description>Location Plugin</description>
     
     
@@ -14,7 +14,7 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Location">
+            <feature name="LocationPlugin">
                 <param name="android-package" value="com.ionicframework.locationplugin"/>
             </feature>
         </config-file>
