@@ -7,8 +7,8 @@
     <description>Location Plugin</description>
     
     
-    <js-module src="www/locationplugin.js" name="Location">
-<!--        <clobbers target="window.locationplugin" />-->
+    <js-module src="www/locationplugin.js" name="LocationPlugin">
+        <clobbers target="LocationPlugin" />
     </js-module>
     
     <!-- android -->
