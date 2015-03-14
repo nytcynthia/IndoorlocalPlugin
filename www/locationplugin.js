@@ -24,4 +24,3 @@ locationplugin.prototype.startPositioning = function(){
 
 var locationplugin = new locationplugin(); 
 module.exports = locationplugin;
-}
