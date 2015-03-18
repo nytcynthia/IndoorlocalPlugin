@@ -7,10 +7,10 @@ locationplugin.prototype.startPositioning = function(){
 	exec(null, null ,"LocationPlugin","startPositioning",[]);
 }
 
-locationplugin.prototype.onButtonClick = function(){
-	console.log("onButtonClick();");
-	exec(null, null, "LocationPlugin", "onButtonClick", []);
-} 
+// locationplugin.prototype.onButtonClick = function(){
+// 	console.log("onButtonClick();");
+// 	exec(null, null, "LocationPlugin", "onButtonClick", []);
+// } 
 
 // locationplugin.prototype.appendMessage = function(){
 // 	console.log("locationplugin.js: appendMessage");

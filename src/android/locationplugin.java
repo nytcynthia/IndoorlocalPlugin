@@ -65,9 +65,9 @@ public class locationplugin extends CordovaPlugin {
 		if (action.equals("startPositioning")){
 			/*this.*/startPositioning();
 
-		} else if (action.equals("onButtonClick")){
-			onButtonClick(view);
-		} else {
+		} /*else if (action.equals("onButtonClick")){
+			onButtonClick();
+		}*/ else {
 			retValue = false;
 		}
 		return retValue;
