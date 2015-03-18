@@ -1,4 +1,5 @@
-package com.ionicframework.linkedit757044;
+// package com.ionicframework.linkedit757044;
+package com.ionicframework.locationplugin;
 
 import mtrec.wherami.lbs.datatype.PointF;
 import mtrec.wherami.lbs.process.ILocationUtil.OnGetLocationResultListener;
@@ -63,6 +64,9 @@ public class locationplugin extends CordovaPlugin {
 		boolean retValue = true;
 		if (action.equals("startPositioning")){
 			/*this.*/startPositioning();
+
+		} else if (action.equals("onButtonClick")){
+			onButtonClick(view);
 		} else {
 			retValue = false;
 		}
@@ -72,6 +76,112 @@ public class locationplugin extends CordovaPlugin {
 	private void startPositioning() {
 		new AlertDialog.Builder(cordova.getActivity()).setMessage("helloworld").create().show();
 	}
+
+/////////////////////////////////////////////////////
+
+// 	private void startPositioning() {
+// 	indoorLocationManager.setOnWifiNotEnabledWhenScanningListener(new OnWifiNotEnabledWhenScanningListener() {
+
+// 		@Override
+// 		public void onWifiNotEnabledWhenScanning(WifiManager WifiManager) {
+// 			// TODO Handle the case that the WIFI is disabled when scanning
+// 			appendMessage("WIFI disabled");
+// 		}
+// 	});
+// 	indoorLocationManager.setOnWifiConnectedListener(new OnWifiConnectedListener() {
+
+// 		@Override
+// 		public void onWifiConnected() {
+// 			// TODO Handle the case that the WIFI is connected
+// 			appendMessage("WIFI enabled");
+// 		}
+// 	});
+// 	indoorLocationManager.setOnReadingDataBeginListener(new OnReadingDataBeginListener() {
+
+// 		@Override
+// 		public void onReadingDataBegin() {
+// 			// TODO The callback that the positioning process is pending to read data
+// 			runOnUiThread(new Runnable() {
+
+// 				@Override
+// 				public void run() {
+// 					// TODO Auto-generated method stub
+// 					appendMessage("Start reading data");
+// 				}
+// 			});
+// 		}
+// 	});
+// 	indoorLocationManager.setOnGetLocationResultListener(new OnGetLocationResultListener() {
+
+// 		@Override
+// 		public void onGetLocationResult(String area, PointF[] points,
+// 				Integer[] radius, String symbol) {
+// 			// TODO The callback that finish calculating the position
+// 			if(area != null && points != null && points.length > 0) {
+// 				StringBuilder positionFoundString = new StringBuilder();
+// 				positionFoundString.append("Position found\n");
+// 				int i = 0;
+// 				for(PointF point : points) {
+// 					positionFoundString.append("Area : ").append(area).append(", x : ").append(point.x).append(", y : ")
+// 						.append(point.y).append(", radius : ").append(radius[i]).append("\n");
+// 					i++;
+// 				}
+// 				appendMessage(positionFoundString.toString());
+// 			} else {
+// 				appendMessage("Calculate failed, waiting another try");
+// 			}
+// 		}
+// 	});
+// }
+
+// 	private void appendMessage(JSONArray args) throws JSONException {
+// 		String message = args.getString(0);
+// 		String lastText = positionTextView.getText() + "\n";
+// 		positionTextView.setText(lastText + message);
+
+// 		new Handler().post(new Runnable() {
+
+// 			@Override
+// 			public void run() {
+// 				((ScrollView)findViewById(R.id.scroll_view)).fullScroll(ScrollView.FOCUS_DOWN);
+// 			}
+// 		});
+// 		console.log("appendMessage");
+// 	}
+
+// 	private void stopPositioning() {
+// 	if(indoorLocationManager != null) {
+// 		try {
+// 			indoorLocationManager.stopLocation();
+// 		} catch (Exception e) {
+// 			e.printStackTrace();
+// 		}
+// 	}
+// 	}
+
+// 	public void onButtonClick() {
+// 		if (indoorLocationManager != null)
+// 			indoorLocationManager.startLocation();
+
+///////////////////////////////////////////////////////
+
+	// int id = view.getId();
+	// switch (id) {
+	// case R.id.start_button:
+	// 	if(indoorLocationManager != null)
+	// 		indoorLocationManager.startLocation();
+	// 	findViewById(R.id.start_button).setEnabled(false);
+	// 	break;
+
+	// case R.id.stop_button:
+	// 	stopPositioning();
+	// 	findViewById(R.id.start_button).setEnabled(true);
+	// 	break;
+	// default:
+	// 	break;
+	// }
+	}
+
 }
 /**
 * Sets the context of the Command. This can then be used to do things like

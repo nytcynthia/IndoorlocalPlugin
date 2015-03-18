@@ -4,7 +4,12 @@ function locationplugin() {
 }
 locationplugin.prototype.startPositioning = function(){ 
 	console.log("locationplugin.js: startPositioning"); 
-	exec(successCallback, null ,"locationplugin","startPositioning",[]);
+	exec(null, null ,"LocationPlugin","startPositioning",[]);
+}
+
+locationplugin.prototype.onButtonClick = function(){
+	console.log("onButtonClick();");
+	exec(null, null, "LocationPlugin", "onButtonClick", []);
 } 
 
 // locationplugin.prototype.appendMessage = function(){
