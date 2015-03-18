@@ -180,7 +180,7 @@ public class locationplugin extends CordovaPlugin {
 	// default:
 	// 	break;
 	// }
-	}
+	// }
 
 }
 /**
