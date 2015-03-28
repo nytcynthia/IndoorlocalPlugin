@@ -35,6 +35,6 @@
         <source-file src="src/android/libs/locationapi/x86/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" /> -->
 
 <!--         <source-file src="src/android/locationplugin.java" target-dir="src/com/ionicframework/locationplugin" /> -->
-        <source-file src="src/android/lWherami.java" target-dir="src/com/ionicframework/locationplugin" />
+        <source-file src="src/android/Wherami.java" target-dir="src/com/ionicframework/locationplugin" />
     </platform>
 </plugin>
