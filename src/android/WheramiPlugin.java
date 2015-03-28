@@ -1,6 +1,6 @@
 package com.wheramiplugin;
 
-import android.support.v7.app.ActionBarActivity;
+// import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -86,7 +86,7 @@ public class WheramiPlugin extends CordovaPlugin {
         JSONObject jObject = args.getJSONObject(0);
 
         String siteName = "hkust";
-        IndoorLocationManager.newInstance(this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
+        IndoorLocationManager.newInstance(MainActivity.this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
 
             @Override
             public void onVerificationFinished(boolean isSuccess, String resultCode) {
