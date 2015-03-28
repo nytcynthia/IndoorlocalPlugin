@@ -86,7 +86,7 @@ public class WheramiPlugin extends CordovaPlugin {
         JSONObject jObject = args.getJSONObject(0);
 
         String siteName = "hkust";
-        IndoorLocationManager.newInstance(MainActivity.this, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
+        IndoorLocationManager.newInstance(activity, siteName, POSITION_DATA_PATH, new OnVerificationListener() {
 
             @Override
             public void onVerificationFinished(boolean isSuccess, String resultCode) {
