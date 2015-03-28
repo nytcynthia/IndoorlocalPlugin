@@ -7,23 +7,34 @@
     <description>Location Plugin</description>
     
     
-    <js-module src="www/locationplugin.js" name="LocationPlugin">
+<!--     <js-module src="www/locationplugin.js" name="LocationPlugin">
         <clobbers target="LocationPlugin" />
+    </js-module> -->
+
+    <js-module src="www/Wherami.js" name="WheramiPlugin">
+        <clobbers target="WheramiPlugin" />
     </js-module>
+
     
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="LocationPlugin">
+<!--             <feature name="LocationPlugin">
                 <param name="android-package" value="com.ionicframework.locationplugin.locationplugin"/>
+            </feature> -->
+            <feature name="WheramiPlugin">
+                <param name="android-package" value="com.wheramiplugin/Wherami"/>
             </feature>
         </config-file>
         
 <!--         <source-file src="src/android/libs/locationapi/armeabi/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" /> -->
-        <source-file src="src/android/libs/locationapi/armeabi-v7a/libdecryptlib.so" target-dir="libs" />
-        <source-file src="src/android/libs/locationapi/locationapi.jar" target-dir="libs" />
+<!--         <source-file src="src/android/libs/locationapi/armeabi-v7a/libdecryptlib.so" target-dir="libs" /> -->
+<!--         <source-file src="src/android/libs/locationapi/locationapi.jar" target-dir="libs" /> -->
+        <source-file src="src/android/libs/locationapi.jar" target-dir="libs" />
 <!--         <source-file src="src/android/libs/locationapi/mips/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" />
         <source-file src="src/android/libs/locationapi/x86/libdecryptlib.so" target-dir="src/com/ionicframework/locationplugin/libs" /> -->
-        <source-file src="src/android/locationplugin.java" target-dir="src/com/ionicframework/locationplugin" />
+
+<!--         <source-file src="src/android/locationplugin.java" target-dir="src/com/ionicframework/locationplugin" /> -->
+        <source-file src="src/android/lWherami.java" target-dir="src/com/ionicframework/locationplugin" />
     </platform>
 </plugin>
