@@ -25,6 +25,8 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.app.Activity;
+
 
 public class WheramiPlugin extends CordovaPlugin {
     private CallbackContext callbackContext;
@@ -91,12 +93,12 @@ public class WheramiPlugin extends CordovaPlugin {
                 Log.e("mtrec", "Passed : " + isSuccess + "!!!!!" + resultCode);
                 if(isSuccess) {
                     // positionTextView.setText("Verification passed!");
-                    this.callbackContext.success("Verfication passed!");
+                    callbackContext.success("Verfication passed!");
                     indoorLocationManager = IndoorLocationManager.getInstance();
                     // startPositioning();
                 } else {
                     // positionTextView.setText("Verification failed : " + resultCode);
-                    this.callbackContext.error("Verification failed : " + resultCode);
+                    callbackContext.error("Verification failed : " + resultCode);
                 }
             }
         });
