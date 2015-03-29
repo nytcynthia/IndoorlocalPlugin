@@ -23,7 +23,7 @@
                 <param name="android-package" value="com.ionicframework.locationplugin.locationplugin"/>
             </feature> -->
             <feature name="WheramiPlugin">
-                <param name="android-package" value="com.wheramiplugin/WheramiPlugin"/>
+                <param name="android-package" value="com.wheramiplugin.WheramiPlugin"/>
             </feature>
         </config-file>
         
