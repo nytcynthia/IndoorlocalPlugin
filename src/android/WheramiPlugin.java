@@ -43,7 +43,8 @@ public class WheramiPlugin extends CordovaPlugin {
         this.activity = this.cordova.getActivity();
         boolean retValue = true;
         if (action.equals("initialize")) {
-            this.initialize(args);
+            this.initialize();
+            //args
         } else {
             retValue = false;
         }
@@ -81,9 +82,9 @@ public class WheramiPlugin extends CordovaPlugin {
     //     positionTextView = (TextView)findViewById(R.id.position_text);
     // }
 
-
-    private void initialize(JSONArray args) throws JSONException {
-        JSONObject jObject = args.getJSONObject(0);
+//JSONArray args throws JSONException
+    private void initialize()  {
+        // JSONObject jObject = args.getJSONObject(0);
 
         String siteName = "hkust";
         IndoorLocationManager.newInstance(activity, siteName, POSITION_DATA_PATH, new OnVerificationListener() {

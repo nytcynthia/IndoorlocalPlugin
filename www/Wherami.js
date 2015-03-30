@@ -1,8 +1,11 @@
 module.exports = {
   initialize: function(successCallback) {
-  	console.log("Wherami.js: is created");
+  	console.log("Wherami.js: initialize()");
+  	var errorCallback = function(error) {
+  		console.log("log: " + error);
+  	}
     cordova.exec(successCallback,
-                 null, // No failure callback
+                 errorCallback, // No failure callback
                  "WheramiPlugin",
                  "initialize",
                  []);
