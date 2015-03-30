@@ -9,7 +9,7 @@ WheramiPlugin.prototype.initialize = function(successCallback){
 		console.log(error);
 	};
 
-	exec(successCallback, errorCallback, "WheramiPlugin", []);
+	exec(successCallback, errorCallback, "WheramiPlugin", "initialize", []);
 };
 
 // PayPalMobile.prototype.version = function(completionCallback) {
