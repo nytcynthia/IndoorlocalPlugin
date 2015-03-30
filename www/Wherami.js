@@ -1,3 +1,17 @@
+module.exports = {
+  initialize: function() {
+    cordova.exec(null,
+                 null, // No failure callback
+                 "WheramiPlugin",
+                 "initialize",
+                 []);
+  }
+};
+
+
+
+
+/*
 var exec = require('cordova/exec');
 function Wherami() { 
 	console.log("Wherami.js: is created");
@@ -11,6 +25,10 @@ WheramiPlugin.prototype.initialize = function(successCallback){
 
 	exec(successCallback, errorCallback, "WheramiPlugin", "initialize", []);
 };
+
+var WheramiPlugin = new WheramiPlugin(); 
+module.exports = WheramiPlugin;
+*/
 
 // PayPalMobile.prototype.version = function(completionCallback) {
 //   var failureCallback = function() {
@@ -45,5 +63,3 @@ WheramiPlugin.prototype.initialize = function(successCallback){
 // 	exec(function(){}, function(){}, "locationplugin", "onBackPressed", []);
 // }
 
-var WheramiPlugin = new WheramiPlugin(); 
-module.exports = WheramiPlugin;
