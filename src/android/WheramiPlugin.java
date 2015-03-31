@@ -96,7 +96,7 @@ public class WheramiPlugin extends CordovaPlugin {
                     // positionTextView.setText("Verification passed!");
                     callbackContext.success("Verfication passed!");
                     indoorLocationManager = IndoorLocationManager.getInstance();
-                    // startPositioning();
+                    startPositioning();
                     if(indoorLocationManager != null) {
                         indoorLocationManager.startLocation();
                     callbackContext.success("start location");    
@@ -110,39 +110,39 @@ public class WheramiPlugin extends CordovaPlugin {
         });
     }
 }
-/*
+
     private void startPositioning() {
-        indoorLocationManager.setOnWifiNotEnabledWhenScanningListener(new OnWifiNotEnabledWhenScanningListener() {
+        // indoorLocationManager.setOnWifiNotEnabledWhenScanningListener(new OnWifiNotEnabledWhenScanningListener() {
 
-            @Override
-            public void onWifiNotEnabledWhenScanning(WifiManager WifiManager) {
-                // TODO Handle the case that the WIFI is disabled when scanning
-                appendMessage("WIFI disabled");
-            }
-        });
-        indoorLocationManager.setOnWifiConnectedListener(new OnWifiConnectedListener() {
+        //     @Override
+        //     public void onWifiNotEnabledWhenScanning(WifiManager WifiManager) {
+        //         // TODO Handle the case that the WIFI is disabled when scanning
+        //         appendMessage("WIFI disabled");
+        //     }
+        // });
+        // indoorLocationManager.setOnWifiConnectedListener(new OnWifiConnectedListener() {
 
-            @Override
-            public void onWifiConnected() {
-                // TODO Handle the case that the WIFI is connected
-                appendMessage("WIFI enabled");
-            }
-        });
-        indoorLocationManager.setOnReadingDataBeginListener(new OnReadingDataBeginListener() {
+        //     @Override
+        //     public void onWifiConnected() {
+        //         // TODO Handle the case that the WIFI is connected
+        //         appendMessage("WIFI enabled");
+        //     }
+        // });
+        // indoorLocationManager.setOnReadingDataBeginListener(new OnReadingDataBeginListener() {
 
-            @Override
-            public void onReadingDataBegin() {
-                // TODO The callback that the positioning process is pending to read data
-                runOnUiThread(new Runnable() {
+        //     @Override
+        //     public void onReadingDataBegin() {
+        //         // TODO The callback that the positioning process is pending to read data
+        //         runOnUiThread(new Runnable() {
 
-                    @Override
-                    public void run() {
-                        // TODO Auto-generated method stub
-                        appendMessage("Start reading data");
-                    }
-                });
-            }
-        });
+        //             @Override
+        //             public void run() {
+        //                 // TODO Auto-generated method stub
+        //                 appendMessage("Start reading data");
+        //             }
+        //         });
+        //     }
+        // });
         indoorLocationManager.setOnGetLocationResultListener(new OnGetLocationResultListener() {
 
             @Override
@@ -158,14 +158,16 @@ public class WheramiPlugin extends CordovaPlugin {
                                 .append(point.y).append(", radius : ").append(radius[i]).append("\n");
                         i++;
                     }
-                    appendMessage(positionFoundString.toString());
+                    callbackContext.success(positionFoundString.toString());
+                    //appendMessage(positionFoundString.toString());
                 } else {
-                    appendMessage("Calculate failed, waiting another try");
+                    callbackContext.error("Calculate failed, waiting another try");
+                    //appendMessage("Calculate failed, waiting another try");
                 }
             }
         });
     }
-
+/*
     private void appendMessage(String message) {
         String lastText = positionTextView.getText() + "\n";
         positionTextView.setText(lastText + message);
