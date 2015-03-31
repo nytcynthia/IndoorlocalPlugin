@@ -94,12 +94,12 @@ public class WheramiPlugin extends CordovaPlugin {
                 Log.e("mtrec", "Passed : " + isSuccess + "!!!!!" + resultCode);
                 if(isSuccess) {
                     // positionTextView.setText("Verification passed!");
-                    callbackContext.success("Verfication passed!");
+                    // callbackContext.success("Verfication passed!");
                     indoorLocationManager = IndoorLocationManager.getInstance();
                     startPositioning();
                     if(indoorLocationManager != null) {
                         indoorLocationManager.startLocation();
-                    callbackContext.success("start location");    
+                    // callbackContext.success("start location");    
                     }
                         
                 } else {
@@ -160,6 +160,7 @@ public class WheramiPlugin extends CordovaPlugin {
                         i++;
                     }
                     callbackContext.success(positionFoundString.toString());
+                    // callbackContext.sendPluginResult(positionFoundString.toString());
                     //appendMessage(positionFoundString.toString());
                 } else {
                     callbackContext.error("Calculate failed, waiting another try");
