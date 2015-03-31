@@ -155,8 +155,10 @@ public class WheramiPlugin extends CordovaPlugin {
                     positionFoundString.append("Position found\n");
                     int i = 0;
                     for(PointF point : points) {
-                        positionFoundString.append("Area : ").append(area).append(", x : ").append(point.x).append(", y : ")
-                                .append(point.y).append(", radius : ").append(radius[i]).append("\n");
+                        // positionFoundString.append("Area : ").append(area).append(", x : ").append(point.x).append(", y : ")
+                        //         .append(point.y).append(", radius : ").append(radius[i]).append("\n");
+                        positionFoundString.append(area).append(",").append(point.x).append(",")
+                                .append(point.y).append(",").append(radius[i]).append("\n");
                         i++;
                     }
                     callbackContext.success(positionFoundString.toString());
