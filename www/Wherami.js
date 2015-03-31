@@ -1,6 +1,9 @@
 module.exports = {
   initialize: function(successCallback) {
   	console.log("Wherami.js: initialize()");
+    var successCallback = function(success) {
+      console.log("log: " + success);
+    }
   	var errorCallback = function(error) {
   		console.log("log: " + error);
   	}
