@@ -8,7 +8,6 @@ module.exports = {
   	var errorCallback = function(error) {
   		console.log("log: " + error);
   	}
-    var 
     cordova.exec(successCallback,
                  errorCallback, // No failure callback
                  "WheramiPlugin",

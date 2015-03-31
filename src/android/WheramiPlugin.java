@@ -152,7 +152,7 @@ public class WheramiPlugin extends CordovaPlugin {
                 // TODO The callback that finish calculating the position
                 if(area != null && points != null && points.length > 0) {
                     StringBuilder positionFoundString = new StringBuilder();
-                    positionFoundString.append("Position found\n");
+                    // positionFoundString.append("Position found\n");
                     int i = 0;
                     for(PointF point : points) {
                         // positionFoundString.append("Area : ").append(area).append(", x : ").append(point.x).append(", y : ")
