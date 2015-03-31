@@ -109,7 +109,8 @@ public class WheramiPlugin extends CordovaPlugin {
             }
         });
     }
-}
+
+
 
     private void startPositioning() {
         // indoorLocationManager.setOnWifiNotEnabledWhenScanningListener(new OnWifiNotEnabledWhenScanningListener() {
@@ -167,6 +168,7 @@ public class WheramiPlugin extends CordovaPlugin {
             }
         });
     }
+}
 /*
     private void appendMessage(String message) {
         String lastText = positionTextView.getText() + "\n";
