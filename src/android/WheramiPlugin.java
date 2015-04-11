@@ -47,6 +47,8 @@ public class WheramiPlugin extends CordovaPlugin {
         if (action.equals("initialize")) {
             this.initialize();
             //args
+        } else if (action.equals("startCalculation")) {
+            this.startCalculation();
         } else if (action.equals("shortestPath")) {
             this.shortestPath(args);
         } else {
@@ -101,10 +103,11 @@ public class WheramiPlugin extends CordovaPlugin {
                     // callbackContext.success("Verfication passed!");
                     indoorLocationManager = IndoorLocationManager.getInstance();
                     startPositioning();
-                    if(indoorLocationManager != null) {
-                        indoorLocationManager.startLocation();
+                    callbackContext.success("Verfication passed");
+                    // if(indoorLocationManager != null) {
+                    //     indoorLocationManager.startLocation();
                     // callbackContext.success("start location");    
-                    }
+                    // }
                         
                 } else {
                     // positionTextView.setText("Verification failed : " + resultCode);
@@ -176,6 +179,14 @@ public class WheramiPlugin extends CordovaPlugin {
         });
     }
 
+    private void startCalculation() {
+        if(indoorLocationManager != null) {
+            indoorLocationManager.startLocation();
+        } else {
+            callbackContext.error("indoorLocationManager is not initialized");
+        }
+    }
+
     private void shortestPath(JSONArray args) throws JSONException {
         // args: float start_area, float start_x, float start_y, float end_area, float end_x, float end_y       
         JSONArray jArray = args.getJSONArray(0);
@@ -209,7 +220,7 @@ public class WheramiPlugin extends CordovaPlugin {
             }
             callbackContext.success(path_result);
         } else {
-            callbackContext.error("IndoorLocationManager is not initialized");
+            callbackContext.error("indoorLocationManager is not initialized");
         }
 
 
