@@ -102,7 +102,7 @@ public class WheramiPlugin extends CordovaPlugin {
                     // positionTextView.setText("Verification passed!");
                     // callbackContext.success("Verfication passed!");
                     indoorLocationManager = IndoorLocationManager.getInstance();
-                    startPositioning();
+                    // startPositioning();
                     callbackContext.success("Verfication passed");
                     // if(indoorLocationManager != null) {
                     //     indoorLocationManager.startLocation();
@@ -181,6 +181,7 @@ public class WheramiPlugin extends CordovaPlugin {
 
     private void startCalculation() {
         if(indoorLocationManager != null) {
+            startPositioning();
             indoorLocationManager.startLocation();
         } else {
             callbackContext.error("indoorLocationManager is not initialized");
