@@ -11,6 +11,7 @@ import mtrec.wherami.lbs.process.ILocationUtil.OnWifiConnectedListener;
 import mtrec.wherami.lbs.process.ILocationUtil.OnWifiNotEnabledWhenScanningListener;
 import mtrec.wherami.lbs.process.IndoorLocationManager;
 import mtrec.wherami.lbs.process.IndoorLocationManager.OnVerificationListener;
+import mtrec.wherami.lbs.datatype.Location;
 import android.net.wifi.WifiManager;
 import android.os.Environment;
 import android.os.Handler;
@@ -177,9 +178,9 @@ public class WheramiPlugin extends CordovaPlugin {
 
     private void shortestPath(JSONArray args) throws JSONException {
         // args: float start_area, float start_x, float start_y, float end_area, float end_x, float end_y       
-        JSONObject jObject = args.getJSONObject(0);
-        JSONObject start_jObject = jObject.getJSONObject(0);
-        JSONObject end_jObject = jObject.getJSONObject(1);
+        JSONArray jArray = args.getJSONArray(0);
+        JSONObject start_jObject = jArray.getJSONObject(0);
+        JSONObject end_jObject = jArray.getJSONObject(1);
 
         int start_area = start_jObject.getInt("area");
         float start_x = (float) start_jObject.getDouble("x");
@@ -197,7 +198,7 @@ public class WheramiPlugin extends CordovaPlugin {
         JSONArray path_jArray = new JSONArray(path);
 
         // TODO: success callback
-        callbackContext.success(path_JArray);
+        callbackContext.success(path_jArray);
     }
 }
 /*
