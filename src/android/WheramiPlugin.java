@@ -199,7 +199,7 @@ public class WheramiPlugin extends CordovaPlugin {
         // input.add(startLocation);
         // input.add(endLocation);
 
-        if (IndoorLocationManager != null) {
+        if (indoorLocationManager != null) {
             ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
             String path_result = "";
             for (Location temp : path) {
