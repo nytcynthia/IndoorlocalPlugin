@@ -197,9 +197,15 @@ public class WheramiPlugin extends CordovaPlugin {
         ArrayList<Location> input = new ArrayList<Location>();
         input.add(startLocation);
         input.add(endLocation);
-        JSONArray input_jArray = new JSONArray(input);
-        callbackContext.success(input_jArray.toString());
-        
+
+        String input_print = "";
+        for (Location temp : input) {
+            input_print = input_print.concat(temp.areaId + ", ");
+            input_print = input_print.concat(temp.x + ", ");
+            input_print = input_print.concat(temp.y + " | ");
+        }
+        callbackContext.success(input_print);
+
         // ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
         
         // // TODO: convert to JSON Object array
