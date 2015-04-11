@@ -13,7 +13,7 @@ module.exports = {
                  "WheramiPlugin",
                  "initialize",
                  []);
-  }
+  },
 
   shortestPath: function(locationValues, callback) {
     console.log("Wherami.js: shortestPath");
