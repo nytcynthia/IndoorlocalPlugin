@@ -203,9 +203,9 @@ public class WheramiPlugin extends CordovaPlugin {
         
         String path_result = "";
         for (Location temp : path) {
-            path_result = path_result.concat(path.areaId + ",");
-            path_result = path_result.concat(path.x + ",");
-            path_result = path_result.concat(path.y + "|");
+            path_result = path_result.concat(temp.areaId + ",");
+            path_result = path_result.concat(temp.x + ",");
+            path_result = path_result.concat(temp.y + "|");
         }
         callbackContext.success(path_result);
 
