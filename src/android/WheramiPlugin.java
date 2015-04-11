@@ -197,11 +197,17 @@ public class WheramiPlugin extends CordovaPlugin {
         ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
         
         // TODO: convert to JSON Object array
-        JSONArray path_jArray = new JSONArray(path);
+        if (path != null) {
+            JSONArray path_jArray = new JSONArray(path);
+            callbackContext.success(path_jArray.toString());
+        } else {
+            callbackContext.success("epic");
+        }
+        
         // JSONArray path_jArray = new JSONArray();
 
         // TODO: success callback
-        callbackContext.success(path_jArray.toString());
+        
     }
 }
 /*
