@@ -1,21 +1,21 @@
 module.exports = {
-  initialize: function() {
-  	console.log("Wherami.js: initialize()");
-    var successCallback = function(success) {
-      console.log("log: " + success);
-    }
-  	var errorCallback = function(error) {
-  		console.log("log: " + error);
-  	}
-    cordova.exec(successCallback,
-                 errorCallback,
-                 "WheramiPlugin",
-                 "initialize",
-                 []);
-  },
+  // initialize: function() {
+  // 	console.log("Wherami.js: initialize()");
+  //   var successCallback = function(success) {
+  //     console.log("log: " + success);
+  //   }
+  // 	var errorCallback = function(error) {
+  // 		console.log("log: " + error);
+  // 	}
+  //   cordova.exec(successCallback,
+  //                errorCallback,
+  //                "WheramiPlugin",
+  //                "initialize",
+  //                []);
+  // },
 
-  startCalculation:function(hello) {
-    console.log("Wherami.js: start()");
+  initialize:function(hello) {
+    console.log("Wherami.js: initialize()");
     var successCallback = function(success) {
       console.log("log: " + success);
       hello(success);
@@ -26,7 +26,7 @@ module.exports = {
     cordova.exec(successCallback,
                  errorCallback, // indoorLocationManager not initialized
                  "WheramiPlugin",
-                 "start",
+                 "initialize",
                  []);
   },
 

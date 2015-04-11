@@ -47,9 +47,11 @@ public class WheramiPlugin extends CordovaPlugin {
         if (action.equals("initialize")) {
             this.initialize();
             //args
-        } else if (action.equals("startCalculation")) {
-            this.startCalculation();
-        } else if (action.equals("shortestPath")) {
+        } 
+        // else if (action.equals("startCalculation")) {
+        //     this.startCalculation();
+        // } 
+        else if (action.equals("shortestPath")) {
             this.shortestPath(args);
         } else {
             retValue = false;
@@ -104,10 +106,10 @@ public class WheramiPlugin extends CordovaPlugin {
                     indoorLocationManager = IndoorLocationManager.getInstance();
                     // startPositioning();
                     callbackContext.success("Verfication passed");
-                    // if(indoorLocationManager != null) {
-                    //     indoorLocationManager.startLocation();
+                    if(indoorLocationManager != null) {
+                        indoorLocationManager.startLocation();
                     // callbackContext.success("start location");    
-                    // }
+                    }
                         
                 } else {
                     // positionTextView.setText("Verification failed : " + resultCode);
@@ -179,14 +181,14 @@ public class WheramiPlugin extends CordovaPlugin {
         });
     }
 
-    private void startCalculation() {
-        if(indoorLocationManager != null) {
-            startPositioning();
-            indoorLocationManager.startLocation();
-        } else {
-            callbackContext.error("indoorLocationManager is not initialized");
-        }
-    }
+    // private void startCalculation() {
+    //     if(indoorLocationManager != null) {
+    //         startPositioning();
+    //         indoorLocationManager.startLocation();
+    //     } else {
+    //         callbackContext.error("indoorLocationManager is not initialized");
+    //     }
+    // }
 
     private void shortestPath(JSONArray args) throws JSONException {
         // args: float start_area, float start_x, float start_y, float end_area, float end_x, float end_y       
@@ -211,7 +213,11 @@ public class WheramiPlugin extends CordovaPlugin {
         // input.add(startLocation);
         // input.add(endLocation);
 
-        if (indoorLocationManager != null) {
+        if (indoorLocationManager == null) {
+            initialize();
+        }
+
+        // if (indoorLocationManager != null) {
             ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
             String path_result = "";
             for (Location temp : path) {
@@ -220,9 +226,9 @@ public class WheramiPlugin extends CordovaPlugin {
                 path_result = path_result.concat(temp.y + "|");
             }
             callbackContext.success(path_result);
-        } else {
-            callbackContext.error("indoorLocationManager is not initialized");
-        }
+        // } else {
+        //     callbackContext.error("indoorLocationManager is not initialized");
+        // }
 
 
 
