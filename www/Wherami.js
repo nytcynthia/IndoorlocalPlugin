@@ -14,6 +14,23 @@ module.exports = {
                  "initialize",
                  []);
   }
+
+  shortestPath: function(locationValues, callback) {
+    console.log("Wherami.js: shortestPath");
+    var successCallback = function(success) {
+      console.log("log: " + success);
+      callback(success);
+    }
+    var errorCallback = function(error) {
+      console.log("log: " + error);
+    }
+    // locationVales: startLocation.x
+    cordova.exec(successCallback, 
+                 errorCallback, 
+                 "WheramiPlugin", 
+                 "shortestPath", 
+                 [locationValues]);
+  }
 };
 
 

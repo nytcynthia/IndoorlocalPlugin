@@ -26,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.app.Activity;
+import java.util.ArrayList;
 
 
 public class WheramiPlugin extends CordovaPlugin {
@@ -45,6 +46,8 @@ public class WheramiPlugin extends CordovaPlugin {
         if (action.equals("initialize")) {
             this.initialize();
             //args
+        } else if (action.equals("shortestPath")) {
+            this.shortestPath(args);
         } else {
             retValue = false;
         }
@@ -170,6 +173,31 @@ public class WheramiPlugin extends CordovaPlugin {
                 }
             }
         });
+    }
+
+    private void shortestPath(JSONArray args) throws JSONException {
+        // args: float start_area, float start_x, float start_y, float end_area, float end_x, float end_y       
+        JSONObject jObject = args.getJSONObject(0);
+        JSONObject start_jObject = jObject.getJSONObject(0);
+        JSONObject end_jObject = jObject.getJSONObject(1);
+
+        int start_area = start_jObject.getInt("area");
+        float start_x = (float) start_jObject.getDouble("x");
+        float start_y = (float) start_jObject.getDouble("y");
+
+        int end_area = end_jObject.getInt("area");
+        float end_x = (float) end_jObject.getDouble("x");
+        float end_y = (float) end_jObject.getDouble("y");
+
+        Location startLocation = new Location(start_area, start_x, start_y);
+        Location endLocation = new Location(end_area, end_x, end_y);
+        ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, start_area);
+        
+        // TODO: convert to JSON Object array
+        JSONArray path_jArray = new JSONArray(path);
+
+        // TODO: success callback
+        callbackContext.success(path_JArray);
     }
 }
 /*
