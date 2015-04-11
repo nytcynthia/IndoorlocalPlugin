@@ -178,22 +178,22 @@ public class WheramiPlugin extends CordovaPlugin {
 
     private void shortestPath(JSONArray args) throws JSONException {
         // args: float start_area, float start_x, float start_y, float end_area, float end_x, float end_y       
-        // JSONArray jArray = args.getJSONArray(0);
-        // JSONObject start_jObject = jArray.getJSONObject(0);
-        // JSONObject end_jObject = jArray.getJSONObject(1);
+        JSONArray jArray = args.getJSONArray(0);
+        JSONObject start_jObject = jArray.getJSONObject(0);
+        JSONObject end_jObject = jArray.getJSONObject(1);
 
-        // int start_area = start_jObject.getInt("area");
-        // float start_x = (float) start_jObject.getDouble("x");
-        // float start_y = (float) start_jObject.getDouble("y");
+        int start_area = start_jObject.getInt("area");
+        float start_x = (float) start_jObject.getDouble("x");
+        float start_y = (float) start_jObject.getDouble("y");
 
-        // int end_area = end_jObject.getInt("area");
-        // float end_x = (float) end_jObject.getDouble("x");
-        // float end_y = (float) end_jObject.getDouble("y");
+        int end_area = end_jObject.getInt("area");
+        float end_x = (float) end_jObject.getDouble("x");
+        float end_y = (float) end_jObject.getDouble("y");
 
-        // Location startLocation = new Location(start_area, start_x, start_y);
-        // Location endLocation = new Location(end_area, end_x, end_y);
-        Location startLocation = new Location(1004, 3452, 9014);
-        Location endLocation = new Location(1004, 5371, 998);
+        Location startLocation = new Location(start_area, start_x, start_y);
+        Location endLocation = new Location(end_area, end_x, end_y);
+        // Location startLocation = new Location(1004, 3452, 9014);
+        // Location endLocation = new Location(1004, 5371, 998);
         ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
         
         // TODO: convert to JSON Object array
