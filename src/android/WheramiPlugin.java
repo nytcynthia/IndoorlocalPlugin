@@ -196,7 +196,7 @@ public class WheramiPlugin extends CordovaPlugin {
         
         // TODO: convert to JSON Object array
         // JSONArray path_jArray = new JSONArray(path);
-        JSONArray path_jArray = new JSONArray;
+        JSONArray path_jArray = new JSONArray();
 
         // TODO: success callback
         callbackContext.success(path_jArray);
