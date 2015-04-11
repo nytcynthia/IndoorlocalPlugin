@@ -201,29 +201,27 @@ public class WheramiPlugin extends CordovaPlugin {
 
         ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
         
-        String path_result = "";
-        for (Location temp : path) {
-            path_result = path_result.concat(temp.areaId + ",");
-            path_result = path_result.concat(temp.x + ",");
-            path_result = path_result.concat(temp.y + "|");
-        }
-        callbackContext.success(path_result);
+        // String path_result = "";
+        // for (Location temp : path) {
+        //     path_result = path_result.concat(temp.areaId + ",");
+        //     path_result = path_result.concat(temp.x + ",");
+        //     path_result = path_result.concat(temp.y + "|");
+        // }
+        // callbackContext.success(path_result);
 
 
 
         // // TODO: convert to JSON Object array
-        // if (path != null) {
-        //     JSONArray path_jArray = new JSONArray(path);
-        //     if (path_jArray != null) {
-        //         callbackContext.success(path_jArray.toString());
-        //     } else {
-        //         callbackContext.error("path_jArray null");
-        //     }             
-        // } else {
-        //     callbackContext.error("path null");
-        // }
-        
-        // JSONArray path_jArray = new JSONArray();
+        if (path != null) {
+            JSONArray path_jArray = new JSONArray(path);
+            if (path_jArray != null) {
+                callbackContext.success(path_jArray.toString());
+            } else {
+                callbackContext.error("path_jArray null");
+            }             
+        } else {
+            callbackContext.error("path null");
+        }
 
         // TODO: success callback
         
