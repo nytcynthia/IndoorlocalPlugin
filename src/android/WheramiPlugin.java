@@ -194,20 +194,23 @@ public class WheramiPlugin extends CordovaPlugin {
         Location endLocation = new Location(end_area, end_x, end_y);
         // Location startLocation = new Location(1004, 3452, 9014);
         // Location endLocation = new Location(1004, 5371, 998);
-        ArrayList<Location> input = new ArrayList<Location>();
-        input.add(startLocation);
-        input.add(endLocation);
 
-        String input_print = "";
-        for (Location temp : input) {
-            input_print = input_print.concat(temp.areaId + ", ");
-            input_print = input_print.concat(temp.x + ", ");
-            input_print = input_print.concat(temp.y + " | ");
-        }
-        callbackContext.success(input_print);
+        // ArrayList<Location> input = new ArrayList<Location>();
+        // input.add(startLocation);
+        // input.add(endLocation);
 
-        // ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
+        ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
         
+        String path_result = "";
+        for (Location temp : path) {
+            path_result = path_result.concat(path.areaId + ",");
+            path_result = path_result.concat(path.x + ",");
+            path_result = path_result.concat(path.y + "|");
+        }
+        callbackContext.success(path_result);
+
+
+
         // // TODO: convert to JSON Object array
         // if (path != null) {
         //     JSONArray path_jArray = new JSONArray(path);
