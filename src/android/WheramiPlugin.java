@@ -199,7 +199,7 @@ public class WheramiPlugin extends CordovaPlugin {
         // JSONArray path_jArray = new JSONArray();
 
         // TODO: success callback
-        callbackContext.success(JSON.stringify(path_jArray));
+        callbackContext.success(path_jArray.toString());
     }
 }
 /*
