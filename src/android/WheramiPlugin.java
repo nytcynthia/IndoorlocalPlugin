@@ -213,11 +213,7 @@ public class WheramiPlugin extends CordovaPlugin {
         // input.add(startLocation);
         // input.add(endLocation);
 
-        if (indoorLocationManager == null) {
-            initialize();
-        }
-
-        // if (indoorLocationManager != null) {
+        if (indoorLocationManager != null) {
             ArrayList<Location> path = IndoorLocationManager.getInstance().findShortestPath(startLocation, endLocation, 1004);
             String path_result = "";
             for (Location temp : path) {
@@ -226,9 +222,9 @@ public class WheramiPlugin extends CordovaPlugin {
                 path_result = path_result.concat(temp.y + "|");
             }
             callbackContext.success(path_result);
-        // } else {
-        //     callbackContext.error("indoorLocationManager is not initialized");
-        // }
+        } else {
+            callbackContext.error("indoorLocationManager is not initialized. Please start postioning before use.");
+        }
 
 
 
