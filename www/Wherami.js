@@ -15,8 +15,25 @@ module.exports = {
                  []);
   },
 
-  shortestPath: function(locationValues, callback) {
+  shortestPath: function(start_area, start_x, start_y, end_area, end_x, end_y, callback) {
+    // locationValues: float start_area, float start_x, float start_y, float end_area, float end_x, float end_y       
     console.log("Wherami.js: shortestPath");
+    var locationValues = [];
+    var startLocation = {
+      "area": start_area,
+      "x": start_x,
+      "y": start_y
+    }
+    var endLocation = {
+      "area": end_area,
+      "x": end_x,
+      "y": end_y
+    }
+    locationValues.push(startLocation);
+    locationValues.push(endLocation);
+    
+    console.log(JSON.stringify(locationValues));
+
     var successCallback = function(success) {
       console.log("log: " + success);
       callback(success);
