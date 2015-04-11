@@ -104,8 +104,8 @@ public class WheramiPlugin extends CordovaPlugin {
                     // positionTextView.setText("Verification passed!");
                     // callbackContext.success("Verfication passed!");
                     indoorLocationManager = IndoorLocationManager.getInstance();
-                    // startPositioning();
-                    callbackContext.success("Verfication passed");
+                    startPositioning();
+                    // callbackContext.success("Verfication passed");
                     if(indoorLocationManager != null) {
                         indoorLocationManager.startLocation();
                     // callbackContext.success("start location");    
