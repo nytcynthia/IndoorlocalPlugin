@@ -7,6 +7,7 @@ module.exports = {
     }
     var errorCallback = function(error) {
       console.log("log: " + error);
+      hello(error);
     }
     cordova.exec(successCallback,
                  errorCallback, // indoorLocationManager not initialized
@@ -39,6 +40,7 @@ module.exports = {
     }
     var errorCallback = function(error) {
       console.log("log: " + error);
+      callback(error);
     }
     
     cordova.exec(successCallback, 
