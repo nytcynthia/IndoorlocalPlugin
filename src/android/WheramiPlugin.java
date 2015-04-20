@@ -68,6 +68,7 @@ public class WheramiPlugin extends CordovaPlugin {
                     startPositioning();
                     if(indoorLocationManager != null) {
                         indoorLocationManager.startLocation();
+                        indoorLocationManager.stopLocation();
                     }
                         
                 } else {
@@ -91,10 +92,10 @@ public class WheramiPlugin extends CordovaPlugin {
                                 .append(point.y).append(",").append(radius[i]).append("\n");
                         i++;
                     }
-                    indoorLocationManager.stopLocation();
+                    // indoorLocationManager.stopLocation();
                     callbackContext.success(positionFoundString.toString());
                 } else {
-                    indoorLocationManager.stopLocation();
+                    // indoorLocationManager.stopLocation();
                     callbackContext.error("Calculate failed, waiting another try");
                 }
 
